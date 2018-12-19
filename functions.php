@@ -71,11 +71,10 @@ if ( ! function_exists( 'starthtmltemplate_com_setup' ) ) :
 		/**
 		 * Add support for core custom logo.
 		 *
-		 * @link https://codex.wordpress.org/Theme_Logo
 		 */
 		add_theme_support( 'custom-logo', array(
-			'height'      => 250,
-			'width'       => 250,
+			'height'      => 40 ,
+			'width'       => 40,
 			'flex-width'  => true,
 			'flex-height' => true,
 		) );
@@ -120,6 +119,61 @@ add_action( 'widgets_init', 'starthtmltemplate_com_widgets_init' );
  * Enqueue scripts and styles.
  */
 function starthtmltemplate_com_scripts() {
+
+	//Styles from html_site
+	// wp_register_style( 'canonical', get_template_directory_uri() . ( '//verumtrade.com' ) );
+	// wp_enqueue_style( 'canonical' );
+
+	wp_register_style( 'shortcut icon', get_template_directory_uri() . ( '/images/favicons/favicon_verum.ico' ) );
+	wp_enqueue_style( 'shortcut icon' );
+
+	wp_register_style( 'icon', get_template_directory_uri() . ( '/images/favicons/favicon_verum.png' ) );
+	wp_enqueue_style( 'icon' );
+
+	wp_register_style( 'hamburger', get_template_directory_uri() . ( '/css/hamburgers.css' ) );
+	wp_enqueue_style( 'hamburger' );
+
+	wp_register_style( 'bootstrap', get_template_directory_uri() . ( '/css/bootstrap.min.css' ) );
+	wp_enqueue_style( 'bootstrap' );
+
+	wp_register_style( 'cloud-flare-css', get_template_directory_uri() . ( '//cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css' ) );
+	wp_enqueue_style( 'cloud-flare-css' );
+
+	wp_register_style( 'main-min', get_template_directory_uri() . ( '/css/main.min.css' ) );
+	wp_enqueue_style( 'main-min' );
+
+	//Scripts from html_site
+	wp_register_script( 'jquery-3-3-1', get_template_directory_uri() . ( '//code.jquery.com/jquery-3.3.1.min.js' ) );
+	wp_enqueue_script( 'jquery-3-3-1' );
+
+	wp_register_script( 'cloud-flare-js', get_template_directory_uri() . ( '//cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js' ) );
+	wp_enqueue_script( 'cloud-flare-js' );
+
+	wp_register_script( 'bootstrapcdn', get_template_directory_uri() . ( '//stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js' ) );
+	wp_enqueue_script( 'bootstrapcdn' );
+	
+	wp_register_script( 'tween-max', get_template_directory_uri() . ( '//tympanus.net/Development/ProximityFeedback/js/TweenMax.min.js' ) );
+	wp_enqueue_script( 'tween-max' );
+
+	wp_register_script( 'nearby', get_template_directory_uri() . ( '//tympanus.net/Development/ProximityFeedback/js/nearby.js' ) );
+	wp_enqueue_script( 'nearby' );
+
+	wp_register_script( 'charming', get_template_directory_uri() . ( '//tympanus.net/Development/ProximityFeedback/js/charming.min.js' ) );
+	wp_enqueue_script( 'charming' );
+
+	wp_register_script( 'feedback', get_template_directory_uri() . ( '/js/feedback-modal.js' ) );
+	wp_enqueue_script( 'feedback' );
+
+	wp_register_script( 'investor', get_template_directory_uri() . ( '/js/investor-modal.js' ) );
+	wp_enqueue_script( 'investor' );
+
+	wp_register_script( 'infinite-decoration', get_template_directory_uri() . ( 'js/infinite-decoration.js' ) );
+	wp_enqueue_script( 'infinite-decoration' );
+
+	wp_register_script( 'common', get_template_directory_uri() . ( '/js/common.js' ) );
+	wp_enqueue_script( 'common' );
+
+	//Defaults underscores style and scripts
 	wp_enqueue_style( 'starthtmltemplate-com-style', get_stylesheet_uri() );
 
 	wp_enqueue_script( 'starthtmltemplate-com-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );

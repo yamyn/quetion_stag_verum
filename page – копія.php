@@ -1,5 +1,5 @@
 <?php
-get_header('home');
+get_header();
 ?>
 
 	<div id="primary" class="content-area">
@@ -21,4 +21,5 @@ get_header('home');
 	</div><!-- #primary -->
 
 <?php
+get_sidebar();
 get_footer();
